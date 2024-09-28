@@ -1,0 +1,29 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='teacher.css') }}">
+    <link rel="stylesheet" href="teacher.css">
+    <script src="app.py"></script>
+    
+</head>
+<body>
+    <h1>Teacher Portal</h1>
+    <form action="/teacher/generate" method="get">
+        <button type="submit">Generate Attendance URL</button>
+    </form>
+    
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for message in messages %}
+            <li class="success">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</body>
+</html>

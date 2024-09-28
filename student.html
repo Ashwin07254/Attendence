@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='student.css') }}">
+    <link rel="stylesheet" href="student.css">
+    <script src="app.py"></script>
+</head>
+<body>
+    <h1>Student Portal</h1>
+    
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for message in messages %}
+            <li class="success">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    
+    <p>Click the link provided by your teacher to mark your attendance.</p>
+</body>
+</html>
